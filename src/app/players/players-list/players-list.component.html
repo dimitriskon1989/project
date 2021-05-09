@@ -1,0 +1,8 @@
+<div class="row no-gutters mt-2">
+    <!-- The word "player" after word "let" is up to you how you named it
+    and the word "players" after word "of" is property which was crated
+    in typescript file players-list.component.ts -->
+    <div class="col-md-12 col-lg-6 mb-3 pr-3" *ngFor="let playerElement of allPlayers">
+        <app-player-item [player]="playerElement" ></app-player-item>
+    </div>
+</div>

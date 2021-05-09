@@ -1,0 +1,155 @@
+<div class="row p-3 my-4 no-gutters align-items-center border border-dark" id="personal-page-background">
+    <div class="col-md-12 col-lg-6">
+        <h1 class="m-0">{{player.name}}</h1>
+        <div class="card-transparent py-3">
+            <div class="row no-gutters d-flex justify-content-center align-items-end">
+                <div class="col-auto">
+                    <img src="{{player.profilImage}}" class="img-responsive rounded" alt="" style="max-width: 100%;">
+                </div>
+                <div class="col">
+                    <div class="card-block px-2">
+                        <p><span style="font-weight: bold;">Date Of Birth : </span>{{player.dateOfBirth}}</p>
+                        <p>
+                            <span style="font-weight: bold;">Nationality : </span>
+                            <img src="{{player.imageNationality}}" alt="" class="px-1">{{player.nationality}}
+                            <img src="{{player.imageSecondNationality}}" alt="" class="px-1">{{player.secondNationality}}
+                        </p>
+                        <p><span style="font-weight: bold;">Position : </span>{{player.position}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-none d-lg-block col-md-6 col-lg-4 offset-2">
+        <div class="card py-3">
+            <div class="row no-gutters">
+                <div class="col-auto p-2">
+                    <img src="{{player.teamLogo}}" class="img-responsive" alt="" style="max-height: 100px;">
+                </div>
+                <div class="col">
+                    <div class="card-block">
+                        <h4 class="card-title"><span style="font-weight: bold; color: rgb(0, 162, 255);">{{player.team}}</span></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row no-gutters border border-dark my-4">
+    <div class="col-12 text-center text-white font-weight-bold" style="background-color: rgb(7, 56, 148);">
+        <h2 class="p-2 m-0">Player Data</h2>
+    </div>
+    <div class="col-12 bg-white">
+        <div class="row no-gutters">
+            <div class="col-12 col-md-5 border-right">
+                <div class="row p-3" style="font-size: 13px;">
+                    <div class="col-6" style="color: rgb(112, 112, 112)">
+                        <p>Name :</p>
+                        <p>Date Of Birth :</p>
+                        <p>Age :</p>
+                        <p>Height :</p>
+                        <p>Nationality :</p>
+                        <p>Position :</p>
+                        <p>Foot :</p>
+                        <p>Current Club :</p>
+                    </div>
+                    <div class="col-6 font-weight-bold">
+                        <p>{{player.name}}</p>
+                        <p>{{player.dateOfBirth}}</p>
+                        <p>{{player.age}}</p>
+                        <p>{{player.height}}</p>
+                        <p>{{player.nationality}}{{player.secondNationality}}</p>
+                        <p>{{player.position}}</p>
+                        <p>{{player.foot}}</p>
+                        <p>{{player.team}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-7 p-0">
+                <div class="col-12 text-center text-dark font-weight-bold" style="background-color: rgb(212, 227, 255);">
+                    <h3 class="m-0 font-weight-bold">Positions</h3>
+                </div>
+                <div class="row no-gutters d-flex h-100">
+                    <div class="col-12 col-sm-6">
+                        <img src="{{player.imagePositions}}" alt="" class="img-responsive" style="max-width: 100%;">
+                    </div>
+                    <div class="col-12 col-sm-6 text-center justify-content-center align-self-center">
+                        <p>Main Position :</p>
+                        <p class="font-weight-bold">{{player.position}}</p>
+                        <p>Second Position :</p>
+                        <p class="font-weight-bold">{{player.secondPosition}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data Table Matches -->
+<div class="row no-gutters border border-dark my-4">
+  <div class="col-12 text-center text-white font-weight-bold" style="background-color: rgb(7, 56, 148);">
+      <h2 class="p-2 m-0">Player Matches</h2>
+  </div>
+  <div class="col-12">
+
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Matches Column -->
+      <ng-container matColumnDef="Matches">
+        <mat-header-cell *matHeaderCellDef>
+          <h3 class="m-0 text-dark font-weight-bold">Matches</h3>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element" id="btn-match-modal">
+          <!-- Trigger the popup modal with this button -->
+          <a type="button" data-toggle="modal" data-target="#myModal" (click)="showModal=true">
+            <i class="fas fa-play-circle fa-2x pr-3"></i>
+          </a>
+          {{element.Matches}}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Result Column -->
+      <ng-container matColumnDef="Result">
+        <mat-header-cell *matHeaderCellDef>
+          <h3 class="m-0 text-dark font-weight-bold">Result</h3>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Result}} </mat-cell>
+      </ng-container>
+
+      <!-- Date Column -->
+      <ng-container matColumnDef="Date">
+        <mat-header-cell *matHeaderCellDef>
+          <h3 class="m-0 text-dark font-weight-bold">Date</h3>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Date}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+  </div>
+</div>
+
+<!-- Popup Modal -->
+<div id="myModal" class="modal fade" role="dialog" [ngClass]="{'show':showModal}">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Header</h4>
+        <button type="button" class="close" data-dismiss="modal" (click)="showModal=false">&times;</button>
+      </div>
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="showModal=false">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,18 @@
+#about {
+  background-color: rgb(14,19,22);
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 40px;
+  margin: 0px;
+}
+h2 {
+  font-size: 20px;
+  font-weight: lighter;
+  margin: 0px;
+}
+img {
+  border-radius: 2%;
+}
+

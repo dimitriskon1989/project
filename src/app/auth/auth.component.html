@@ -1,0 +1,60 @@
+<div class="container-fluid text-white p-0" id="main-container">
+  <div class="col-12" id="main">
+
+    <div class="row no-gutters" id="row-buttons">
+      <div class="col-6 text-left p-4">
+        <a (click)="goBack()" style="cursor: pointer;" class="text-white"><i class="fas fa-arrow-left fa-2x"></i></a>
+      </div>
+      <div class="col-6 text-right p-4">
+        <a routerLink="/home" class="btn btn-primary font-weight-bold mr-2" style="font-size: 16px;">Home</a>
+      </div>
+    </div>
+
+    <div class="row no-gutters justify-content-center">
+      <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3 text-center">
+        <img src="../../assets/photo/2.png" width="150px" height="150px" alt="">
+      </div>
+    </div>
+
+    <div class="row no-gutters justify-content-center">
+      <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+        <div class="alert alert-danger" *ngIf="error">
+          <p>{{ error }}</p>
+        </div>
+        <div *ngIf="isLoading" class="text-center">
+          <app-loading-spinner></app-loading-spinner>
+        </div>
+        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+          <!-- <div class="form-group" *ngIf="!isLoginMode">
+            <label for="teamName">Team Name</label><span style="color:red;"> *</span>
+            <input type="text" name="teamName" id="teamName" class="form-control" required>
+          </div> -->
+          <div class="form-group">
+            <label for="email">Email</label><span style="color:red;"> *</span>
+            <input type="email" name="email" id="email" class="form-control" ngModel email required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label><span style="color:red;"> *</span>
+            <input type="password" name="password" id="password" class="form-control" minlength="6" ngModel required>
+          </div>
+          <!-- <div class="form-group" *ngIf="!isLoginMode">
+            <label for="ConfirmPassword">Confirm Password</label><span style="color:red;"> *</span>
+            <input type="password" name="ConfirmPassword" id="ConfirmPassword" class="form-control" required>
+          </div> -->
+          <div class="form-group">
+            <button class="btn btn-block btn-primary" type="submit" [disabled]="!authForm.valid">
+              {{ isLoginMode ? 'Login' :'Register' }}
+            </button>
+          </div>
+          <div *ngIf="isLoginMode">
+            <h4>Don't have an account ? <a class="font-weight-bold" style="color: rgb(31, 117, 247); cursor: pointer;" (click)=onSwitchMode()>Register</a> </h4>
+          </div>
+          <div *ngIf="!isLoginMode">
+            <h4>Already have an account ? <a class="font-weight-bold" style="color: rgb(31, 117, 247); cursor: pointer;" (click)=onSwitchMode()>Login</a> </h4>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  </div>

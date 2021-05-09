@@ -1,0 +1,15 @@
+<div class="card ">
+    <div class="row no-gutters">
+        <div class="col-auto">
+            <img src="{{ player.profilImage }}" class="img-responsive " alt="" style="max-height: 150px;">
+        </div>
+        <div class="col">
+            <div class="card-block px-2">
+                <h4 class="card-title"><span style="font-weight: bold;">Name :</span> {{ player.name }}</h4>
+                <p class="card-text"><span style="font-weight: bold;">Position :</span> {{ player.position }}</p>
+                <p class="card-text"><span style="font-weight: bold;">Team :</span> {{ player.team }}</p>
+                <a class="btn btn-primary" (click)="getCurrentPlayer(player.id)">Profile</a>
+            </div>
+        </div>
+    </div>
+</div>

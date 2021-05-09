@@ -1,0 +1,30 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" opened="false">
+      <mat-nav-list id="sidenavLinks">
+        <a mat-list-item> Goalkeepers </a>
+        <a mat-list-item> Left Backs </a>
+        <a mat-list-item> Right Backs </a>
+        <a mat-list-item> Center Defenders </a>
+        <a mat-list-item> Defensive Midfielders </a>
+        <a mat-list-item> Center Midfielders </a>
+        <a mat-list-item> Attacking Midfielders </a>
+        <a mat-list-item> Right Wingers </a>
+        <a mat-list-item> Left Wingers </a>
+        <a mat-list-item> Center Forwards </a>
+        <a mat-list-item (click)="sidenav.toggle()" class="btn rounded-0" id="closeBtn">Close</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+    <div class="container p-3" style="height: 100vh;">
+        <div class="row no-gutters ">
+            <div class="col-12">
+                <button class="btn btn-info" (click)="sidenav.toggle()"><i class="fas fa-running"></i> Positions</button>
+            </div>
+
+            <div class="col-12">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

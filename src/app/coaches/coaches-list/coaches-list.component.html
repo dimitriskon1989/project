@@ -1,0 +1,25 @@
+<div class="row no-gutters mt-2">
+    <div class="col-12 p-0">
+        <!-- The word "coach" after word "let" is up to you how you named it 
+            and the word "coaches" after word "of" is property which was crated 
+            in typescript file coaches-list.component.ts -->
+            
+        <div class="col-12 p-0 mb-2" *ngFor="let coach of coaches">
+            <div class="card">
+                <div class="row no-gutters">
+                    <div class="col-auto">
+                        <img src="{{ coach.imagePath }}" class="img-responsive" alt="" style="max-height: 200px;">
+                    </div>
+                    <div class="col">
+                        <div class="card-block px-2">
+                            <h4 class="card-title">{{ coach.name }}</h4>
+                            <p class="card-text">{{ coach.team }}</p>
+                            <a href="#" class="btn btn-primary">Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-coach-item></app-coach-item>
+    </div>
+</div>

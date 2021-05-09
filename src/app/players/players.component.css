@@ -1,0 +1,15 @@
+#sidenavLinks a {
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+#sidenavLinks a:hover {
+    background-color: transparent;
+    color: #5bc0de;
+}
+#sidenavLinks #closeBtn {
+    color: red;
+}
+#sidenavLinks #closeBtn:hover {
+    color: red;
+}

@@ -1,0 +1,24 @@
+#personal-page-background {
+    background-image: url("../../../assets/photo/personal-page-background.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+table {
+  width: 100%;
+}
+
+.modal.show {
+  display: block;
+}
+.fade.show {
+  background: rgba(0,0,0,0.5);
+}
+
+#btn-match-modal a {
+  color: rgb(72, 129, 252);
+}
+#btn-match-modal a:hover {
+  color: rgb(4, 54, 161);
+}
+
