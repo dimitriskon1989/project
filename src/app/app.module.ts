@@ -42,8 +42,6 @@ import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { HeaderComponent } from './home/header/header.component';
 import { TeamComponent } from './team/team.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegistrationComponent } from './auth/registration/registration.component';
 import { AuthComponent } from './auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
@@ -65,8 +63,6 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
     SliderComponent,
     HeaderComponent,
     TeamComponent,
-    LoginComponent,
-    RegistrationComponent,
     AuthComponent,
     LoadingSpinnerComponent,
   ],

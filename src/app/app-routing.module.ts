@@ -9,8 +9,6 @@ import { PlayersListComponent } from './players/players-list/players-list.compon
 import { PlayersComponent } from './players/players.component';
 import { SupportComponent } from './support/support.component';
 import { TeamComponent } from './team/team.component';
-import { RegistrationComponent } from './auth/registration/registration.component';
-import { LoginComponent } from './auth/login/login.component';
 import { AuthComponent } from './auth/auth.component';
 
 
@@ -23,8 +21,6 @@ const appRoutes: Routes = [
   ]},
   {path: 'coaches', component: CoachesComponent},
   {path: 'support', component: SupportComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'registration', component: RegistrationComponent},
   {path: 'team', component: TeamComponent},
   {path: 'auth', component: AuthComponent},
 
